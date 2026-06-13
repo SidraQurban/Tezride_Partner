@@ -33,7 +33,7 @@ const CircularTimer = ({ seconds }: { seconds: number }) => {
   const { theme } = useTheme();
   const progress = seconds / TIMER_MAX;
   const strokeDashoffset = CIRC * (1 - progress);
-  const color = theme.secondary;
+  const color = theme.primary;
 
   return (
     <View style={timerStyles.wrapper}>
@@ -369,7 +369,7 @@ const OTPScreen = ({ navigation, route }: any) => {
         <View style={styles.infoSection}>
           <Text style={styles.infoText}>Please enter the 6-digit code sent</Text>
           <Text style={styles.infoText}>to you on</Text>
-          <Text style={[styles.phoneDisplay, { color: theme.secondary }]}>
+          <Text style={[styles.phoneDisplay, { color: theme.primary }]}>
             {formattedPhone}
           </Text>
         </View>
@@ -401,8 +401,8 @@ const OTPScreen = ({ navigation, route }: any) => {
                 selectTextOnFocus
                 textContentType="oneTimeCode"
                 autoComplete="sms-otp"
-                selectionColor={theme.secondary}
-                cursorColor={theme.secondary}
+                // selectionColor={theme.primary}
+                cursorColor={theme.primary}
               />
             </OtpBox>
           ))}
@@ -420,7 +420,7 @@ const OTPScreen = ({ navigation, route }: any) => {
               </Text>
             ) : (
               <Text 
-                style={[styles.resendTimer, { color: theme.secondary }]}
+                style={[styles.resendTimer, { color: theme.primary }]}
                 onPress={handleResend}
               >
                 Resend Code
@@ -503,7 +503,7 @@ const styles = StyleSheet.create({
     lineHeight: 28,
   },
   phoneDisplay: {
-    fontSize: 22,
+    fontSize: 20,
     fontFamily: "Poppins_700Bold",
     marginTop: 8,
   },

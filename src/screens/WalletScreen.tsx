@@ -20,6 +20,7 @@ import { useTheme } from '../context/ThemeContext';
 import { getFontFamily, getTextAlign, getFontSize } from '../utils/layout';
 import { ridesService } from '../services/rides';
 import { ActivityIndicator } from 'react-native';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 const WalletIcon = Wallet as any;
 const ArrowDownLeftIcon = ArrowDownLeft as any;
@@ -64,7 +65,11 @@ const WalletScreen = () => {
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             <Header title={t('wallet.title')} showBack={true} />
-
+<View style={{ paddingHorizontal: responsiveWidth(5), marginTop: responsiveHeight(1) }}>
+                <Text style={{ fontSize: getFontSize(16, isRTL), fontFamily: getFontFamily('semibold', isRTL) }}>
+                My Wallet
+                </Text>
+                </View>
             <ScrollView
                 contentContainerStyle={[
                     styles.content,

@@ -16,6 +16,7 @@ import { useLanguage } from "../context/LanguageContext";
 import { getTextAlign, getFontFamily, getFontSize } from "../utils/layout";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import Logo from "../components/Logo/index";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 const { width, height } = Dimensions.get("window");
 
@@ -218,7 +219,7 @@ const OnboardingScreen = ({ navigation }: any) => {
         </View>
         {/* Centered Logo overlay */}
         <View style={styles.logoOverlay} pointerEvents="none">
-          <Logo />
+          <Logo  style={{height:responsiveHeight(9)}}/>
         </View>
       </View>
 
@@ -292,10 +293,10 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: COLORS.primary,
+    borderColor: COLORS.secondary,
   },
   langToggleText: {
-    color: COLORS.primary,
+    color: COLORS.secondary,
     fontSize: 14,
     fontWeight: "bold",
   },

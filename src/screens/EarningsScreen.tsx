@@ -20,6 +20,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { getFontFamily, getTextAlign, getFontSize } from '../utils/layout';
 import { ridesService } from '../services/rides';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 const TrendingUpIcon = TrendingUp as any;
 const WalletIcon = Wallet as any;
@@ -170,6 +171,12 @@ const EarningsScreen = () => {
                 title={t('earnings.title')}
                 showBack={true}
             />
+            <View style={{ paddingHorizontal: responsiveWidth(5), marginTop: responsiveHeight(1) }}>
+                <Text style={{ fontSize: getFontSize(16, isRTL), fontFamily: getFontFamily('semibold', isRTL) }}>
+                Performance Analytics
+                </Text>
+                </View>
+
             <ScrollView
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={[

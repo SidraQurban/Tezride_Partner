@@ -474,7 +474,7 @@ const Dashboard = (props: any) => {
               },
             ]}
           >
-            <Menu color={theme.primary} size={24} />
+            <Menu color={theme.secondary} size={24} />
           </TouchableOpacity>
         </View>
 

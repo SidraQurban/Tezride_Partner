@@ -23,7 +23,7 @@ const Logo: React.FC<LogoProps> = ({ size, style, inCircle = false }) => {
             style={[
                 {
                     width: size || responsiveWidth(40),
-                    height: undefined,
+                    height:undefined,
                     aspectRatio: 3,
                 },
                 style
