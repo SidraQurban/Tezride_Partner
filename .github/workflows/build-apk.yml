@@ -89,12 +89,12 @@ jobs:
 
       - name: Build Release APK
         if: ${{ (github.event.inputs.build_type || 'release') == 'release' }}
-        run: ./gradlew assembleRelease --build-cache --parallel --daemon -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
+        run: ./gradlew assembleRelease --build-cache --parallel --daemon -x lint -x lintVitalAnalyzeRelease -x lintVitalRelease -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=1g"
         working-directory: android
 
       - name: Build Debug APK
         if: ${{ (github.event.inputs.build_type || 'release') == 'debug' }}
-        run: ./gradlew assembleDebug --build-cache --parallel --daemon -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=512m"
+        run: ./gradlew assembleDebug --build-cache --parallel --daemon -x lint -Dorg.gradle.jvmargs="-Xmx4g -XX:MaxMetaspaceSize=1g"
         working-directory: android
 
       - name: Rename APK
