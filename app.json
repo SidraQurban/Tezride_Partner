@@ -10,7 +10,7 @@
       "appVersionSource": "remote"
     },
     "updates": {
-      "url": "https://u.expo.dev/2a7b954e-b482-4b4e-8573-6eff6fcc3a4c"
+      "enabled": true
     },
     "icon": "./src/assets/logo.png",
     "userInterfaceStyle": "light",
