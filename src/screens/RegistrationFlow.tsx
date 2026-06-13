@@ -1027,14 +1027,14 @@ const RegistrationFlow = ({ navigation, route }: any) => {
             <View
               style={[
                 styles.stepBar,
-                { backgroundColor: i <= step ? theme.primary : "#E5E7EB" },
+                { backgroundColor: i <= step ? theme.secondary : "#E5E7EB" },
               ]}
             />
             <Text
               style={[
                 styles.stepLabel,
                 {
-                  color: i <= step ? theme.primary : "#9CA3AF",
+                  color: i <= step ? theme.secondary : "#9CA3AF",
                   fontFamily: getFontFamily(
                     i === step ? "medium" : "regular",
                     isRTL,
@@ -1548,6 +1548,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     gap: 4,
+    marginTop: responsiveHeight(2),
   },
   stepBar: {
     width: "100%",

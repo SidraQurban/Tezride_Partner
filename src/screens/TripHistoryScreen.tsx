@@ -382,7 +382,7 @@ const TripHistoryScreen = ({ navigation }: any) => {
             <Header title={t('navigation.trips', 'My Trips')} showBack={true} />
             <View style={{ paddingHorizontal: responsiveWidth(5), marginTop: responsiveHeight(1) }}>
                 <Text style={{ fontSize: getFontSize(16, isRTL), fontFamily: getFontFamily('semibold', isRTL) }}>
-                    My Trips
+                    {t('dashboard.myTrips')}
                 </Text>
             </View>
             {/* Active ride banner */}

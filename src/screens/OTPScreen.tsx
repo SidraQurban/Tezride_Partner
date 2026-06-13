@@ -367,8 +367,8 @@ const OTPScreen = ({ navigation, route }: any) => {
       <View style={styles.content}>
         {/* Info */}
         <View style={styles.infoSection}>
-          <Text style={styles.infoText}>Please enter the 6-digit code sent</Text>
-          <Text style={styles.infoText}>to you on</Text>
+          <Text style={styles.infoText}>{t("otp.sentCode")}</Text>
+          <Text style={styles.infoText}>{t("otp.toYouOn")}</Text>
           <Text style={[styles.phoneDisplay, { color: theme.primary }]}>
             {formattedPhone}
           </Text>
@@ -413,17 +413,17 @@ const OTPScreen = ({ navigation, route }: any) => {
         {/* Resend */}
         <View style={styles.resendRow}>
           <Text style={styles.resendInfo}>
-            Didn't receive code?{" "}
+            {t("otp.didntReceive")}{" "}
             {timer > 0 ? (
               <Text style={styles.resendTimer}>
-                Resend Code ({timer}s)
+                {t("otp.resend")} ({timer}s)
               </Text>
             ) : (
               <Text 
                 style={[styles.resendTimer, { color: theme.primary }]}
                 onPress={handleResend}
               >
-                Resend Code
+                {t("otp.resend")}
               </Text>
             )}
           </Text>
@@ -450,7 +450,7 @@ const OTPScreen = ({ navigation, route }: any) => {
             {loading ? (
               <ActivityIndicator color="#FFF" />
             ) : (
-              <Text style={styles.verifyBtnText}>Continue</Text>
+              <Text style={styles.verifyBtnText}>{t("otp.continue")}</Text>
             )}
           </LinearGradient>
         </TouchableOpacity>

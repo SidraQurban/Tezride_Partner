@@ -173,7 +173,7 @@ const EarningsScreen = () => {
             />
             <View style={{ paddingHorizontal: responsiveWidth(5), marginTop: responsiveHeight(1) }}>
                 <Text style={{ fontSize: getFontSize(16, isRTL), fontFamily: getFontFamily('semibold', isRTL) }}>
-                Performance Analytics
+                {t('dashboard.performanceAnalytics')}
                 </Text>
                 </View>
 
@@ -250,7 +250,7 @@ const EarningsScreen = () => {
                             <View style={[styles.cardIcon, { backgroundColor: theme.primaryLight }]}>
                                 <WalletIcon size={14} color={theme.primary} />
                             </View>
-                            <Text style={[styles.cardTitle, { color: theme.text, fontSize: getFontSize(10, isRTL) }]} numberOfLines={1}>Balance</Text>
+                            <Text style={[styles.cardTitle, { color: theme.text, fontSize: getFontSize(10, isRTL) }]} numberOfLines={1}>{t('earnings.balance', 'Balance')}</Text>
                         </View>
                         <Text style={[styles.cardValue, { color: theme.text, fontSize: getFontSize(16, isRTL) }]} numberOfLines={1} adjustsFontSizeToFit>{formattedBalance}</Text>
                     </Card>

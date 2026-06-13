@@ -17,6 +17,7 @@ import { COLORS } from '../utils/constants';
 import { MapPin, ArrowLeft, Clock, Download, Navigation } from 'lucide-react-native';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
+import { LinearGradient } from 'expo-linear-gradient';
 import { getFontFamily } from '../utils/layout';
 import { decodePolyline } from '../utils/mapUtils';
 import axios from 'axios';
@@ -253,9 +254,16 @@ const TripHistoryDetailScreen = ({ route, navigation }: any) => {
                 </View>
 
                 {/* Download Receipt Button */}
-                <TouchableOpacity style={[styles.downloadBtn, { backgroundColor: theme.primary + '15', borderColor: theme.primary + '30' }]} onPress={handleDownloadReceipt} activeOpacity={0.8}>
-                    <Download color={theme.primary} size={20} style={{ marginRight: 8 }} />
-                    <Text style={[styles.downloadBtnText, { color: theme.primary }]}>Download Receipt</Text>
+                <TouchableOpacity onPress={handleDownloadReceipt} activeOpacity={0.8}>
+                    <LinearGradient
+                        colors={[theme.primary, theme.secondary]}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        style={[styles.downloadBtn, { borderWidth: 0 }]}
+                    >
+                        <Download color="#FFFFFF" size={20} style={{ marginRight: 8 }} />
+                        <Text style={[styles.downloadBtnText, { color: "#FFFFFF" }]}>Download Receipt</Text>
+                    </LinearGradient>
                 </TouchableOpacity>
             </View>
             </ScrollView>

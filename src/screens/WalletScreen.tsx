@@ -67,7 +67,7 @@ const WalletScreen = () => {
             <Header title={t('wallet.title')} showBack={true} />
 <View style={{ paddingHorizontal: responsiveWidth(5), marginTop: responsiveHeight(1) }}>
                 <Text style={{ fontSize: getFontSize(16, isRTL), fontFamily: getFontFamily('semibold', isRTL) }}>
-                My Wallet
+                {t('dashboard.myWallet')}
                 </Text>
                 </View>
             <ScrollView
@@ -129,7 +129,7 @@ const WalletScreen = () => {
                                 )}
                             </View>
                             <View style={[styles.txInfo, { alignItems: 'flex-start', marginLeft: 15 }] as any}>
-                                <Text style={[styles.txTitle, { fontSize: getFontSize(15, isRTL) }]}>{item.description || 'Transaction'}</Text>
+                                <Text style={[styles.txTitle, { fontSize: getFontSize(15, isRTL) }]}>{item.description || t('wallet.transaction')}</Text>
                                 <Text style={[styles.txDate, { fontSize: getFontSize(12, isRTL) }]}>{new Date(item.createdAt).toLocaleDateString()}</Text>
                             </View>
                             <Text style={[

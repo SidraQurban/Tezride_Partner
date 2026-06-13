@@ -10,6 +10,7 @@ import {
     ScrollView,
     Image,
 } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useTranslation } from 'react-i18next';
 import { COLORS } from '../utils/constants';
@@ -165,17 +166,23 @@ const RideCard = ({
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    style={[styles.requestButton, styles.acceptButton, { backgroundColor: theme.primary }]}
                     onPress={() => onAccept(ride)}
                     disabled={!!acceptingId || !!rejectingId}
                 >
-                    {acceptingId === ride.rideId ? (
-                        <ActivityIndicator size="small" color="#FFF" />
-                    ) : (
-                        <Text style={[styles.requestButtonText, { color: '#FFF', fontFamily: getFontFamily('bold', isRTL) }]}>
-                            {t('ride.accept', 'Accept')}
-                        </Text>
-                    )}
+                    <LinearGradient
+                        colors={[theme.primary, theme.secondary]}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 0 }}
+                        style={[styles.requestButton, styles.acceptButton]}
+                    >
+                        {acceptingId === ride.rideId ? (
+                            <ActivityIndicator size="small" color="#FFF" />
+                        ) : (
+                            <Text style={[styles.requestButtonText, { color: '#FFF', fontFamily: getFontFamily('bold', isRTL) }]}>
+                                {t('ride.accept', 'Accept')}
+                            </Text>
+                        )}
+                    </LinearGradient>
                 </TouchableOpacity>
             </View>
         </TouchableOpacity>
