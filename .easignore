@@ -1,0 +1,9 @@
+# Ignore local native folders to let EAS prebuild them fresh
+android/
+ios/
+
+# Ignore development artifcats
+dist/
+node_modules/
+.expo/
+.eas/

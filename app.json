@@ -1,0 +1,112 @@
+{
+  "expo": {
+    "name": "TezRide Partner",
+    "slug": "tez-ride-partner",
+    "version": "1.0.1",
+    "runtimeVersion": "1.0.1",
+    "sdkVersion": "54.0.0",
+    "orientation": "portrait",
+    "cli": {
+      "appVersionSource": "remote"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/2a7b954e-b482-4b4e-8573-6eff6fcc3a4c"
+    },
+    "icon": "./src/assets/logo.png",
+    "userInterfaceStyle": "light",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tezride.partner",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSLocationWhenInUseUsageDescription": "TezRide Partner needs your location to show available ride requests nearby and navigate to pickup/dropoff points.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "TezRide Partner needs background location access to track your ride even when you are using other navigation apps.",
+        "NSLocationAlwaysUsageDescription": "TezRide Partner needs background location access to keep your position updated for ride requests.",
+        "UIBackgroundModes": [
+          "location",
+          "fetch"
+        ]
+      }
+    },
+    "android": {
+      "usesCleartextTraffic": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/logo.png",
+        "backgroundColor": "#FF991C"
+      },
+      "package": "com.tezride.partner",
+      "softwareKeyboardLayoutMode": "resize",
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCIbaIdCvCWhGMU8ZvtxDF2DUMIkjYylmU"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./src/assets/logo.png"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./src/assets/logo.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#FF991C"
+        }
+      ],
+      "expo-localization",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "2.1.21",
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 35,
+            "buildToolsVersion": "36.0.0"
+          },
+          "ios": {
+            "deploymentTarget": "16.4"
+          }
+        }
+      ],
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow TezRide Partner to use your location.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true,
+          "foregroundService": {
+            "notificationTitle": "TezRide is tracking your location",
+            "notificationBody": "We use your location to find nearby rides and track your progress.",
+            "notificationColor": "#FF991C"
+          }
+        }
+      ],
+      "expo-secure-store",
+      "expo-av",
+      [
+        "expo-notifications",
+        {
+          "icon": "./src/assets/logo.png",
+          "color": "#FF991C",
+          "sounds": [
+            "./src/assets/notification_alert.mp3",
+            "./src/assets/completed_ride_alert.mp3"
+          ]
+        }
+      ]
+    ]
+  }
+}
