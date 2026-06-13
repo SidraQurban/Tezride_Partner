@@ -10,7 +10,12 @@
       "appVersionSource": "remote"
     },
     "updates": {
-      "enabled": true
+      "url": "https://u.expo.dev/426d0d59-045c-443f-95d1-4538448442b9"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "426d0d59-045c-443f-95d1-4538448442b9"
+      }
     },
     "icon": "./src/assets/logo.png",
     "userInterfaceStyle": "light",
