@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
             </View>
 
             {/* Always keep navigation/back on the left (LTR Layout Consistency) */}
-            <View style={[styles.sideSection, { left: 20}]}>
+            <View style={[styles.sideSection, { left: 10}]}>
                 {showBack ? renderBack() : leftComponent}
             </View>
 
