@@ -35,7 +35,8 @@
       "usesCleartextTraffic": true,
       "adaptiveIcon": {
         "foregroundImage": "./src/assets/logo.png",
-        "backgroundColor": "#FF991C"
+        "backgroundColor": "#FF991C",
+        "monochromeImage": "./src/assets/notification_icon.png"
       },
       "package": "com.tezride.partner",
       "softwareKeyboardLayoutMode": "resize",
@@ -99,8 +100,11 @@
       [
         "expo-notifications",
         {
-          "icon": "./src/assets/logo.png",
+          "icon": "./src/assets/notification_icon.png",
           "color": "#FF991C",
+          "defaultChannel": "ride-requests",
+          "androidMode": "default",
+          "androidCollapsedTitle": "TezRide Partner",
           "sounds": [
             "./src/assets/notification_alert.mp3",
             "./src/assets/completed_ride_alert.mp3"

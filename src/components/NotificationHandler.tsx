@@ -27,11 +27,21 @@ const NotificationHandler: React.FC = () => {
     // 2. Setup Android channels
     if (Platform.OS === 'android') {
       Notifications.setNotificationChannelAsync('ride-requests', {
-        name: 'Ride Requests',
+        name: 'TezRide Partner',
+        description: 'Ride request alerts and status updates',
         importance: Notifications.AndroidImportance.MAX,
         vibrationPattern: [0, 250, 250, 250],
-        lightColor: '#FF231F7C',
-        sound: 'notification_alert.wav', // Fallback
+        lightColor: '#FF991C',
+        enableLights: true,
+        enableVibrate: true,
+        sound: 'notification_alert.wav',
+      });
+
+      Notifications.setNotificationChannelAsync('default', {
+        name: 'TezRide Partner',
+        description: 'General TezRide Partner notifications',
+        importance: Notifications.AndroidImportance.DEFAULT,
+        sound: 'default',
       });
     }
 

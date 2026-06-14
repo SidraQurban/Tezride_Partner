@@ -2,8 +2,8 @@ import React, { createContext, useState, useContext, useEffect, useCallback } fr
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { DeviceEventEmitter } from 'react-native';
 import { navigate, navigationRef } from '../services/NavigationService';
-
 import { SignalRService } from '../services/SignalRService';
+import { NotificationService } from '../services/notifications';
 
 interface AuthUser {
     id: string;
@@ -76,6 +76,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
         await Promise.all(ops);
         console.log('[AuthContext] Auth State Change: Session Persisted Successfully');
+
+        // Register push token — fire-and-forget, never blocks login
+        NotificationService.registerForPushNotifications(userData.id).catch(err =>
+            console.warn('[AuthContext] Push registration failed (non-fatal):', err)
+        );
     }, []);
 
     const signOut = useCallback(async () => {
@@ -84,6 +89,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         try {
             const currentUserId = user?.id;
             setUser(null);
+
+            // 0. Clear cached push token
+            await NotificationService.unregisterOnLogout();
 
             // 1. Disconnect and cleanup SignalR
             await SignalRService.disconnect('DRIVER');
