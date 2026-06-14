@@ -2,32 +2,18 @@ import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Constants from 'expo-constants';
 import api from './api';
 
 const PUSH_TOKEN_KEY = 'expo_push_token';
 
 // ── expo-notifications project ID ─────────────────────────────────────────────
-// Must match the projectId in app.json / app.config.js
-const EXPO_PROJECT_ID = (() => {
-    try {
-        // eslint-disable-next-line @typescript-eslint/no-var-requires
-        const appConfig = require('../../app.json');
-        return appConfig?.expo?.extra?.eas?.projectId ?? '';
-    } catch {
-        return '';
-    }
-})();
+const EXPO_PROJECT_ID: string =
+    Constants.expoConfig?.extra?.eas?.projectId ??
+    Constants.easConfig?.projectId ??
+    '';
 
 export const NotificationService = {
-    /**
-     * Registers the device for push notifications.
-     * - Requests permissions (first call shows the system dialog)
-     * - Creates the Android channel
-     * - Gets the Expo push token
-     * - Sends the token to the backend
-     *
-     * Call this right after successful login.
-     */
     registerForPushNotifications: async (userId: string): Promise<string | null> => {
         if (!Device.isDevice) {
             console.log('[NotificationService] Physical device required for push notifications');
