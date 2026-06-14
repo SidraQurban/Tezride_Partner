@@ -33,7 +33,7 @@ const CircularTimer = ({ seconds }: { seconds: number }) => {
   const { theme } = useTheme();
   const progress = seconds / TIMER_MAX;
   const strokeDashoffset = CIRC * (1 - progress);
-  const color = theme.secondary;
+  const color = theme.primary;
 
   return (
     <View style={timerStyles.wrapper}>
@@ -367,9 +367,9 @@ const OTPScreen = ({ navigation, route }: any) => {
       <View style={styles.content}>
         {/* Info */}
         <View style={styles.infoSection}>
-          <Text style={styles.infoText}>Please enter the 6-digit code sent</Text>
-          <Text style={styles.infoText}>to you on</Text>
-          <Text style={[styles.phoneDisplay, { color: theme.secondary }]}>
+          <Text style={styles.infoText}>{t("otp.sentCode")}</Text>
+          <Text style={styles.infoText}>{t("otp.toYouOn")}</Text>
+          <Text style={[styles.phoneDisplay, { color: theme.primary }]}>
             {formattedPhone}
           </Text>
         </View>
@@ -401,8 +401,8 @@ const OTPScreen = ({ navigation, route }: any) => {
                 selectTextOnFocus
                 textContentType="oneTimeCode"
                 autoComplete="sms-otp"
-                selectionColor={theme.secondary}
-                cursorColor={theme.secondary}
+                // selectionColor={theme.primary}
+                cursorColor={theme.primary}
               />
             </OtpBox>
           ))}
@@ -413,17 +413,17 @@ const OTPScreen = ({ navigation, route }: any) => {
         {/* Resend */}
         <View style={styles.resendRow}>
           <Text style={styles.resendInfo}>
-            Didn't receive code?{" "}
+            {t("otp.didntReceive")}{" "}
             {timer > 0 ? (
               <Text style={styles.resendTimer}>
-                Resend Code ({timer}s)
+                {t("otp.resend")} ({timer}s)
               </Text>
             ) : (
               <Text 
-                style={[styles.resendTimer, { color: theme.secondary }]}
+                style={[styles.resendTimer, { color: theme.primary }]}
                 onPress={handleResend}
               >
-                Resend Code
+                {t("otp.resend")}
               </Text>
             )}
           </Text>
@@ -450,7 +450,7 @@ const OTPScreen = ({ navigation, route }: any) => {
             {loading ? (
               <ActivityIndicator color="#FFF" />
             ) : (
-              <Text style={styles.verifyBtnText}>Continue</Text>
+              <Text style={styles.verifyBtnText}>{t("otp.continue")}</Text>
             )}
           </LinearGradient>
         </TouchableOpacity>
@@ -503,7 +503,7 @@ const styles = StyleSheet.create({
     lineHeight: 28,
   },
   phoneDisplay: {
-    fontSize: 22,
+    fontSize: 20,
     fontFamily: "Poppins_700Bold",
     marginTop: 8,
   },

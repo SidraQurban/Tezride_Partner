@@ -37,7 +37,7 @@ const BottomTabNavigator = () => {
             initialRouteName="DashboardTab"
             screenOptions={{
                 headerShown: false,
-                tabBarActiveTintColor: theme.primary,
+                tabBarActiveTintColor: theme.secondary,
                 tabBarInactiveTintColor: theme.textSecondary,
                 tabBarStyle: {
                     flexDirection: 'row',
@@ -69,7 +69,7 @@ const BottomTabNavigator = () => {
                     tabBarLabel: ({ focused, color }) => (
                         <View style={styles.tabLabelContainer}>
                             <Text style={{ color, fontSize: getFontSize(12, isRTL), fontFamily: getFontFamily('medium', isRTL) }}>{t('navigation.home')}</Text>
-                            {focused && <View style={[styles.tabIndicator, { backgroundColor: theme.primary }]} />}
+                            {focused && <View style={[styles.tabIndicator, { backgroundColor: theme.secondary }]} />}
                         </View>
                     ),
                     tabBarIcon: ({ color, focused }) => (
@@ -84,7 +84,7 @@ const BottomTabNavigator = () => {
                     tabBarLabel: ({ focused, color }) => (
                         <View style={styles.tabLabelContainer}>
                             <Text style={{ color, fontSize: getFontSize(12, isRTL), fontFamily: getFontFamily('medium', isRTL) }}>{t('navigation.analytics', 'Analytics')}</Text>
-                            {focused && <View style={[styles.tabIndicator, { backgroundColor: theme.primary }]} />}
+                            {focused && <View style={[styles.tabIndicator, { backgroundColor: theme.secondary }]} />}
                         </View>
                     ),
                     tabBarIcon: ({ color, focused }) => (
@@ -99,7 +99,7 @@ const BottomTabNavigator = () => {
                     tabBarLabel: ({ focused, color }) => (
                         <View style={styles.tabLabelContainer}>
                             <Text style={{ color, fontSize: getFontSize(12, isRTL), fontFamily: getFontFamily('medium', isRTL) }}>{t('navigation.wallet', 'Wallet')}</Text>
-                            {focused && <View style={[styles.tabIndicator, { backgroundColor: theme.primary }]} />}
+                            {focused && <View style={[styles.tabIndicator, { backgroundColor: theme.secondary }]} />}
                         </View>
                     ),
                     tabBarIcon: ({ color, focused }) => (
@@ -114,7 +114,7 @@ const BottomTabNavigator = () => {
                     tabBarLabel: ({ focused, color }) => (
                         <View style={styles.tabLabelContainer}>
                             <Text style={{ color, fontSize: getFontSize(12, isRTL), fontFamily: getFontFamily('medium', isRTL) }}>{t('navigation.profile', 'Profile')}</Text>
-                            {focused && <View style={[styles.tabIndicator, { backgroundColor: theme.primary }]} />}
+                            {focused && <View style={[styles.tabIndicator, { backgroundColor: theme.secondary }]} />}
                         </View>
                     ),
                     tabBarIcon: ({ color, focused }) => (

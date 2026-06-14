@@ -28,7 +28,7 @@ const Header: React.FC<HeaderProps> = ({
     const { isRTL } = useLanguage();
     const { theme } = useTheme();
 
-    const backColor = theme.primary;
+    const backColor = theme.secondary;
 
     const renderBack = () => (
         <TouchableOpacity
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
             </View>
 
             {/* Always keep navigation/back on the left (LTR Layout Consistency) */}
-            <View style={[styles.sideSection, { left: 24 }]}>
+            <View style={[styles.sideSection, { left: 10}]}>
                 {showBack ? renderBack() : leftComponent}
             </View>
 

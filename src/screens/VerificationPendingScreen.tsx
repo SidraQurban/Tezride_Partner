@@ -11,6 +11,7 @@ import { CheckCircle2, Clock, LogOut, RefreshCcw, ShieldCheck, AlertCircle } fro
 import { View as MotiView } from 'moti';
 import { getFontFamily } from '../utils/layout';
 import { useTranslation } from 'react-i18next';
+import Button from '../components/Button';
 
 const VerificationPendingScreen = () => {
     const navigation = useNavigation<any>();
@@ -106,22 +107,12 @@ const VerificationPendingScreen = () => {
                     </View>
                 </View>
 
-                <TouchableOpacity 
-                    style={[styles.refreshButton, { backgroundColor: theme.primary }]}
+                <Button 
+                    title={isRTL ? 'اسٹیٹس ریفریش کریں' : 'Refresh Status'}
                     onPress={handleRefreshStatus}
-                    disabled={isRefreshing}
-                >
-                    {isRefreshing ? (
-                        <ActivityIndicator color="#FFF" />
-                    ) : (
-                        <>
-                            <RefreshCcw size={20} color="#FFF" style={[styles.buttonIcon, { marginRight: isRTL ? 0 : 10, marginLeft: isRTL ? 10 : 0 }]} />
-                            <Text style={[styles.refreshText, { fontFamily: getFontFamily('bold', isRTL) }]}>
-                                {isRTL ? 'اسٹیٹس ریفریش کریں' : 'Refresh Status'}
-                            </Text>
-                        </>
-                    )}
-                </TouchableOpacity>
+                    loading={isRefreshing}
+                    style={{ width: '100%', borderRadius: 16, marginBottom: 16 }}
+                />
 
                 <TouchableOpacity 
                     style={[styles.logoutButton, { borderColor: theme.error }]}

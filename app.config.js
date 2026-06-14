@@ -6,7 +6,7 @@ module.exports = {
     sdkVersion: "54.0.0",
     runtimeVersion: "1.0.1",
     updates: {
-      url: "https://u.expo.dev/2a7b954e-b482-4b4e-8573-6eff6fcc3a4c",
+      url: "https://u.expo.dev/426d0d59-045c-443f-95d1-4538448442b9",
     },
     orientation: "portrait",
     cli: {
@@ -65,7 +65,7 @@ module.exports = {
     extra: {
       googleMapsApiKey: "AIzaSyCIbaIdCvCWhGMU8ZvtxDF2DUMIkjYylmU",
       eas: {
-        projectId: "2a7b954e-b482-4b4e-8573-6eff6fcc3a4c",
+        projectId: "426d0d59-045c-443f-95d1-4538448442b9",
       },
     },
     plugins: [

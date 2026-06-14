@@ -170,7 +170,7 @@ const LoginScreen = ({ navigation }: any) => {
               transition={{ delay: 200 }}
               style={styles.taglineMain}
             >
-              Enter your phone number{"\n"}to continue
+              {t("login.phoneNumberToContinue")}
             </MotiText>
 
             {/* Redesigned Input */}

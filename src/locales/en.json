@@ -27,14 +27,19 @@
     "btnSendCode": "Send Verification Code",
     "btnEnterPhone": "Enter Mobile Number",
     "privacyPrefix": "By continuing you agree to our ",
-    "privacyPolicy": "Terms and Privacy Policy"
+    "privacyPolicy": "Terms and Privacy Policy",
+    "phoneNumberToContinue": "Enter your phone number\nto continue"
   },
   "otp": {
     "title": "Verify your number",
     "subtitle": "Enter the 6-digit code sent to your number",
     "resendIn": "Resend code in",
     "resend": "Resend Code",
-    "verify": "Verify & Continue"
+    "verify": "Verify & Continue",
+    "didntReceive": "Didn't receive code?",
+    "continue": "Continue",
+    "sentCode": "Please enter the 6-digit code sent",
+    "toYouOn": "to you on"
   },
   "dashboard": {
     "online": "You're Online",
@@ -50,6 +55,8 @@
     "myWallet": "My Wallet",
     "history": "History",
     "testRide": "Test Ride",
+    "performanceAnalytics": "Performance Analytics",
+    "myTrips": "My Trips",
     "searchPlaceholder": "Looking for new orders?",
     "onlineDesc": "You are receiving new requests",
     "offlineDesc": "Go online to start earning",
@@ -165,14 +172,26 @@
     "weekly": "Weekly",
     "monthly": "Monthly",
     "growth": "+12% more than last {{interval}}",
-    "days": "Days"
+    "days": "Days",
+    "earningsActivity": "Earnings Activity",
+    "rideEarning": "Ride Earning",
+    "noRecentActivity": "No recent earnings activity.",
+    "totalWeeklyEarnings": "Earnings",
+    "totalTrips": "Total Trips",
+    "kilometers": "Kilometers",
+    "balance": "Balance"
   },
   "wallet": {
     "title": "Wallet",
     "availableBalance": "Available Balance",
     "topUp": "Top Up",
     "recentTransactions": "Recent Transactions",
-    "payout": "Bank Payout"
+    "payout": "Bank Payout",
+    "transactions": "Transactions",
+    "recentActivity": "Recent Activity",
+    "earningsActivity": "Earnings Activity",
+    "noRecentActivity": "No recent activity",
+    "transaction": "Transaction"
   },
   "profile": {
     "title": "Profile",

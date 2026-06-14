@@ -34,6 +34,7 @@ import {
     buildFareLookupFromTransactions,
     looksLikeCoordinates,
 } from '../utils/tripHistoryEnrichment';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 type TripItem = HistoryTripItem;
 
@@ -379,7 +380,11 @@ const TripHistoryScreen = ({ navigation }: any) => {
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             <Header title={t('navigation.trips', 'My Trips')} showBack={true} />
-
+            <View style={{ paddingHorizontal: responsiveWidth(5), marginTop: responsiveHeight(1) }}>
+                <Text style={{ fontSize: getFontSize(16, isRTL), fontFamily: getFontFamily('semibold', isRTL) }}>
+                    {t('dashboard.myTrips')}
+                </Text>
+            </View>
             {/* Active ride banner */}
             {safeActiveRide && (
                 <TouchableOpacity

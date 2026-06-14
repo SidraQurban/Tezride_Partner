@@ -20,6 +20,7 @@ import { useTheme } from '../context/ThemeContext';
 import { getFontFamily, getTextAlign, getFontSize } from '../utils/layout';
 import { ridesService } from '../services/rides';
 import { ActivityIndicator } from 'react-native';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
 
 const WalletIcon = Wallet as any;
 const ArrowDownLeftIcon = ArrowDownLeft as any;
@@ -64,7 +65,11 @@ const WalletScreen = () => {
     return (
         <View style={[styles.container, { paddingTop: insets.top }]}>
             <Header title={t('wallet.title')} showBack={true} />
-
+<View style={{ paddingHorizontal: responsiveWidth(5), marginTop: responsiveHeight(1) }}>
+                <Text style={{ fontSize: getFontSize(16, isRTL), fontFamily: getFontFamily('semibold', isRTL) }}>
+                {t('dashboard.myWallet')}
+                </Text>
+                </View>
             <ScrollView
                 contentContainerStyle={[
                     styles.content,
@@ -124,7 +129,7 @@ const WalletScreen = () => {
                                 )}
                             </View>
                             <View style={[styles.txInfo, { alignItems: 'flex-start', marginLeft: 15 }] as any}>
-                                <Text style={[styles.txTitle, { fontSize: getFontSize(15, isRTL) }]}>{item.description || 'Transaction'}</Text>
+                                <Text style={[styles.txTitle, { fontSize: getFontSize(15, isRTL) }]}>{item.description || t('wallet.transaction')}</Text>
                                 <Text style={[styles.txDate, { fontSize: getFontSize(12, isRTL) }]}>{new Date(item.createdAt).toLocaleDateString()}</Text>
                             </View>
                             <Text style={[

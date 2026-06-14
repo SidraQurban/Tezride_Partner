@@ -27,14 +27,19 @@
     "btnSendCode": "تصدیقی کوڈ بھیجیں",
     "btnEnterPhone": "موبائل نمبر درج کریں",
     "privacyPrefix": "جاری رکھ کر آپ ہماری ",
-    "privacyPolicy": "شرائط اور رازداری کی پالیسی سے اتفاق کرتے ہیں"
+    "privacyPolicy": "شرائط اور رازداری کی پالیسی سے اتفاق کرتے ہیں",
+    "phoneNumberToContinue": "جاری رکھنے کے لیے اپنا فون نمبر\nدرج کریں"
   },
   "otp": {
     "title": "اپنے نمبر کی تصدیق کریں",
     "subtitle": "وہ 6 ہندسوں کا کوڈ درج کریں جو آپ کے نمبر پر بھیجا گیا ہے",
     "resendIn": "کوڈ دوبارہ بھیجیں",
     "resend": "کوڈ دوبارہ بھیجیں",
-    "verify": "تصدیق کریں اور آگے بڑھیں"
+    "verify": "تصدیق کریں اور آگے بڑھیں",
+    "didntReceive": "کوڈ موصول نہیں ہوا؟",
+    "continue": "جاری رکھیں",
+    "sentCode": "براہ کرم وہ 6 ہندسوں کا کوڈ درج کریں جو آپ کو بھیجا گیا ہے",
+    "toYouOn": "اس نمبر پر:"
   },
   "dashboard": {
     "online": "آپ آن لائن ہیں",
@@ -50,6 +55,8 @@
     "myWallet": "میرا والٹ",
     "history": "ہسٹری",
     "testRide": "ٹیسٹ رائیڈ",
+    "performanceAnalytics": "کارکردگی کے تجزیات",
+    "myTrips": "میرے ٹرپس",
     "searchPlaceholder": "کیا آپ نئے آرڈرز تلاش کر رہے ہیں؟",
     "onlineDesc": "آپ کو نئی درخواستیں موصول ہو رہی ہیں",
     "offlineDesc": "کمانے کے لیے آن لائن جائیں",
@@ -164,14 +171,26 @@
     "weekly": "ہفتہ وار",
     "monthly": "ماہانہ",
     "growth": "پچھلے {{interval}} سے +12% زیادہ",
-    "days": "دن"
+    "days": "دن",
+    "earningsActivity": "کمائی کی سرگرمی",
+    "rideEarning": "سواری کمائی",
+    "noRecentActivity": "حالیہ کوئی کمائی سرگرمی نہیں۔",
+    "totalWeeklyEarnings": "کمائی",
+    "totalTrips": "کل ٹرپس",
+    "kilometers": "کلومیٹر",
+    "balance": "بیلنس"
   },
   "wallet": {
     "title": "بٹوہ",
     "availableBalance": "دستیاب بیلنس",
     "topUp": "ٹاپ اپ",
     "recentTransactions": "حالیہ ٹرانزیکشنز",
-    "payout": "بینک پے آؤٹ"
+    "payout": "بینک پے آؤٹ",
+    "transactions": "ٹرانزیکشن",
+    "recentActivity": "حالیہ سرگرمی",
+    "earningsActivity": "کمائی کی سرگرمی",
+    "noRecentActivity": "کوئی حالیہ سرگرمی نہیں",
+    "transaction": "ٹرانزیکشن"
   },
   "profile": {
     "title": "پروفائل",
