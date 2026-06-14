@@ -68,6 +68,15 @@ export const NotificationService = {
                     importance: Notifications.AndroidImportance.DEFAULT,
                     sound: 'default',
                 });
+
+                // Marketing & announcements — lower importance, no ride alert sound
+                await Notifications.setNotificationChannelAsync('promotions', {
+                    name: 'TezRide Partner Offers',
+                    description: 'Promotions, incentives, and app announcements',
+                    importance: Notifications.AndroidImportance.DEFAULT,
+                    enableVibrate: false,
+                    sound: 'default',
+                });
             }
 
             // 3. Get Expo push token
